@@ -1,0 +1,66 @@
+.active{
+    color: #fdfdfd;
+    background-color: #6e7279;
+    border-radius: 3px;
+}
+
+ .active:hover{
+    color: rgb(0, 0, 0);
+}
+
+.man ul{
+  display: none;
+}
+.man:hover .man ul{
+    display: flex;
+}
+
+
+
+.sidenav{
+padding-top: 12px;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  text-align: left;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  
+}
+
+.sidenav a {
+  padding: 5px 5px 5px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #ffffff;
+  background-color: #0f172a;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  color: #0f172a;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.down-menu{
+  display: none;
+}
+.parent-menu:focus-within .down-menu{
+  display: block;
+}

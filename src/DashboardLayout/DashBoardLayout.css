@@ -1,0 +1,13 @@
+.down{
+  display: none;
+  position: relative;
+}
+.parent:focus-within .down{
+  display: block;
+}
+.man{
+    border-radius: 1px;
+}
+.man:hover{
+    border-radius: 1px;
+}

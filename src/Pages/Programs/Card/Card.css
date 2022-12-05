@@ -1,0 +1,58 @@
+ .card:hover .img{
+ transform: scale(1.1);
+ filter: brightness(.7);
+
+}
+
+figure{
+    overflow: hidden;
+}
+.img{
+    transition: transform .2s;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.ribbon {
+  position: absolute;
+  right: 0px; top: 0px;
+  z-index: 1;
+overflow: hidden;
+  width: 110px; height: 110px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 26px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  width: 150px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#03000c 0%, #000105 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 32px; right: -33px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 0px solid #485BA7;
+  border-right: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-top: 0px solid #485BA7;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 0px solid transparent;
+  border-right: 0px solid #485BA7;
+  border-bottom: 0px solid transparent;
+  border-top: 0px solid #485BA7;
+}
