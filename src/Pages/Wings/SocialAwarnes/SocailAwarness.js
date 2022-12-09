@@ -3,7 +3,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const SocailAwarness = () => {
     return (
-      <section className=" px-5 m-auto text-justify font-serif text-[17px] py-5 bg-base-100 dark:bg-slate-800 dark:text-slate-300">
+      <section className=" px-5 m-auto text-justify font-serif text-[17px] py-5 bg-[#e6f0f6]  dark:bg-slate-800 dark:text-slate-300">
         <div className="xl:w-[1100px] mx-auto">
           <div className="my-5">
             <p>

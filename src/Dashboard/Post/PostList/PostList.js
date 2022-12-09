@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React from 'react';
+import toast from 'react-hot-toast';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const PostList = () => {
@@ -20,6 +21,7 @@ const PostList = () => {
         .then((res) => {
           if (res.statusText === "OK") {
             refetch();
+            toast.success('Successfully Deleted')
             console.log(res);
           }
         })
@@ -39,7 +41,7 @@ const PostList = () => {
               </tr>
             </thead>
             <tbody>
-              {posts.map((post, index) => (
+              {posts.result?.map((post, index) => (
                 <tr className="hover" key={post?._id}>
                   <th>{index + 1}</th>
                   <td>{post?.title}</td>

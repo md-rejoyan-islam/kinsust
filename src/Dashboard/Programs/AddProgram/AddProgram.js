@@ -38,6 +38,7 @@ const AddProgram = () => {
      time.year = year;
      time.publish = publish;
      data.time = time;
+  
 
      console.log(data);
 

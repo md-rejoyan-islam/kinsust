@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const OurHistory = () => {
     useTitle("Our History")
     return (
-      <section className=" m-auto pb-5 bg-base-100 dark:bg-slate-800 dark:text-slate-300">
+      <section className=" m-auto pb-5 bg-[#e0ecf2] dark:bg-slate-800 dark:text-slate-300">
         <div>
           <div>
             <img src={hand} alt="" className="w-screen" />

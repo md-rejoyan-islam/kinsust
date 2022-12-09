@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import useTitle from "../../Components/Title/Title";
 
 const Login = () => {
-  useTitle('login')
+  useTitle('login') 
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();

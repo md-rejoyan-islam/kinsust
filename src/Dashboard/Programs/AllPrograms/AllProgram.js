@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React from 'react';
 import toast from 'react-hot-toast';
+
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const AllProgram = () => {
@@ -15,9 +16,9 @@ const AllProgram = () => {
   });
 
   const programDelete = (id) => {
-    axios
-      .delete(
-        `hhttps://kin-server-side-rejoyanislam.vercel.app/api/v1/program/${id}`
+    console.log(id);
+    axios.delete(
+        `https://kin-server-side-rejoyanislam.vercel.app/api/v1/program/${id}`
       )
       .then((res) => {
         if (res.statusText === "OK") {

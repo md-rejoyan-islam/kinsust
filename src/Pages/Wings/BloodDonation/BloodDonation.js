@@ -2,11 +2,9 @@ import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const BloodDonation = () => {
+  
     return (
-      <section
-        className=" px-5 m-auto text-justify font-serif text-[17px] py-5 bg-base-100 dark:bg-slate-800 dark:text-slate-300"
-       
-      >
+      <section className=" px-5 m-auto text-justify font-serif text-[17px] py-5 bg-[#e6f0f6]  dark:bg-slate-800 dark:text-slate-300">
         <div className="xl:w-[1100px] mx-auto">
           <div className="my-5">
             <p>
@@ -25,7 +23,8 @@ const BloodDonation = () => {
               <PhotoView src="https://kinsust.org/wp-content/uploads/2022/02/ezgif-7-3e95f1b962-1024x652.webp">
                 <img
                   src="https://kinsust.org/wp-content/uploads/2022/02/ezgif-7-3e95f1b962-1024x652.webp"
-                  alt="" className='mx-auto'
+                  alt=""
+                  className="mx-auto"
                 />
               </PhotoView>
             </PhotoProvider>

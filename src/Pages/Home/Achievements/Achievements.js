@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
-const Achievements = () => {
-    return (
-      <section className=" px-4 py-10 dark:bg-[#272442] dark:text-white bg-[#dbdffd]">
+const Achievements = ({dark}) => {
+  
+  return (
+    <section className="dark:text-slate-200 dark:bg-[#293453f3]   bg-[#cdecfe] ">
+      <div className=" px-4 py-10 max-w-screen-2xl mx-auto ">
         <div className="xl:w-[1050px] m-auto">
-          <h1 className="font-black text-5xl py-5 ">
+          <h1 className="lg:text-6xl text-4xl md:text-5xl font-bold py-5 px-5">
             Our Achievements
           </h1>
-          <p className="text-lg py-3">
-            KIN was awarded the Joy Bangla Youth Award by Young Bangla for being
-            one of the 50 best organizations among the other 1300 organizations
-            and awarded by SANDHANI 8 times in a row for being the Best
-            Non-medical Blood Donation Organization.
+          <p className="md:px-16 lg:px-0 lg:py-6 py-2 lg:text-xl text-lg md:text-lg font-medium text-justify px-5">
+            <span
+              className="text-red-600"
+              style={{ fontFamily: "Arial black, Helvetica, sans-serif" }}
+            >
+              "KIN"
+            </span>{" "}
+            was awarded the Joy Bangla Youth Award by Young Bangla for being one
+            of the 50 best organizations among the other 1300 organizations and
+            awarded by SANDHANI 8 times in a row for being the Best Non-medical
+            Blood Donation Organization.
           </p>
         </div>
         <div>
@@ -41,8 +49,9 @@ const Achievements = () => {
             </figure>
           </div>
         </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default Achievements;

@@ -6,7 +6,7 @@ const containerStyle = {
   height: "400px",
 };
 const onLoad = (marker) => {
-  console.log("marker: ", marker);
+  
 };
 const center = {
   lat: 24.9203068348844,
@@ -16,7 +16,7 @@ const center = {
 
 const Map = () => {
   return (
-    <div>
+    <div className="border-4 rounded-lg dark:border-yellow-200 border-[#1b3b4b]">
       <LoadScript googleMapsApiKey="AIzaSyDhWWmZ-Jovpu6rwfSsFt9qYdUSd3G7Mxc">
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16}>
           {/* Child components, such as markers, info windows, etc. */}

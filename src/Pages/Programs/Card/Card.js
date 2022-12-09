@@ -17,14 +17,14 @@ const Card = () => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="text-2xl font-bold text-center">KIN বই উৎসব ২০২২ </h2>
+          <h2 className="text-2xl font-bold text-center pt-2">KIN বই উৎসব ২০২২ </h2>
           <div className="my-3">
             <NavLink
               to={
                 "//kinsust.org/wp-content/uploads/2022/02/ezgif-1-368256298b-e1644699059330.webp"
               }
               target={"_blank"}
-              className="btn btn-neutral bg-zinc-800 hover:bg-zinc-100 hover:text-black"
+              className="px-2 py-2 font-bold rounded-md text-lg bg-[#1e293bc1]  text-[#fff] border-none hover:bg-zinc-600 hover:text-black"
             >
               Learn More
             </NavLink>

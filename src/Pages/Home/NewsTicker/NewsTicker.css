@@ -32,13 +32,13 @@
   bottom: 0;
   width: 100%;
   overflow: hidden;
-  height: 3rem;
+  height: 2.65rem;
   background-color: rgba(#0a7df0, 0.9); 
   padding-left: 100%;
 }
   .ticker {
     display: inline-flex;
-    height: 3rem;
+    height: 2.65rem;
     white-space: nowrap;
     padding-right: 100%;
     box-sizing: content-box;
@@ -62,7 +62,7 @@
       display: inline-flex;
       align-items:center;
       padding: 0 2rem;
-      font-size: 20px;
+      font-size: 18px;
      
 
     }

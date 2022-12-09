@@ -1,9 +1,10 @@
-import React from 'react';
+import React  from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const TouchWithUs = () => {
+   
     return (
-      <section className="bg-base-300 py-16 px-5 dark:text-white dark:bg-[#0f172a]">
+      <section className="bg-[#bae5fdca] dark:bg-[#202c4cf7] py-16 px-5 text-black dark:text-slate-200 ">
         <div className="xl:w-[750px] mx-auto">
           <figure>
             <PhotoProvider>
@@ -16,9 +17,11 @@ const TouchWithUs = () => {
             </PhotoProvider>
           </figure>
         </div>
-        <div className="xl:w-[600px] pb-16 pt-5 mx-auto">
-          <h1 className="text-6xl font-bold py-8">Get In Touch With Us</h1>
-          <p className="text-lg">
+        <div className="md:w-[600px]  pt-5 mx-auto px-5">
+          <h1 className="lg:text-6xl text-4xl md:text-5xl font-bold text-center py-5">
+            Get In Touch With Us
+          </h1>
+          <p className="md:px-16 lg:px-0 lg:py-6 py-2 lg:text-xl text-[17px] md:text-lg text-justify">
             Want to get the latest updates? Then subscribe to our newsletter by
             creating account for latest events, national & international days
             posts and much more

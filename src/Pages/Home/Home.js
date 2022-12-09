@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useTitle from '../../Components/Title/Title';
 
 import AboutUs from './AboutUs/AboutUs';
@@ -14,20 +14,22 @@ import Volunteer from './Volunteer/Volunteer';
 import Wings from './Wings/Wings';
 
 const Home = () => {
+
+
   useTitle("Home")
     return (
-      <div >
-        <NewsTicker></NewsTicker>
-        <Slider></Slider>
+      <div>
+        <NewsTicker ></NewsTicker>
+        <Slider ></Slider>
         <AboutUs ></AboutUs>
-        <Sponsor></Sponsor>
-        <Wings></Wings>
-        <Achieved></Achieved>
+        <Sponsor ></Sponsor>
+        <Wings ></Wings>
+        <Achieved ></Achieved>
         {/* <div className="divider"></div> */}
-        
-        <Achievements></Achievements>
-        <Volunteer></Volunteer>
-        <TouchWithUs></TouchWithUs>
+
+        <Achievements ></Achievements>
+        <Volunteer ></Volunteer>
+        <TouchWithUs ></TouchWithUs>
       </div>
     );
 };
