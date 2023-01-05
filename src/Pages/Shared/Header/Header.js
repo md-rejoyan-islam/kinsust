@@ -1,12 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../Assets/Images/Logo/kinLogo.gif";
-import { useContext, useEffect, useState } from "react";
+import logo from "../../../Assets/Images/Logo/kin-logo.gif";
+import logoDark from "../../../Assets/Images/Logo/kin-logo-dark.gif";
+import { useContext, useState } from "react";
 import "./Header.css";
 import { AuthContext } from "../../../Context/AuthContext/AuthProvider";
 
 const Header = () => {
   const { user, userSignOut } = useContext(AuthContext);
-  let dark = localStorage.getItem('dark') || false;
+  let dark = localStorage.getItem("dark") || false;
   const [checkDark, setCheckDark] = useState(localStorage.getItem("dark"));
   const [open, setOpen] = useState(false);
   const openNav = () => {
@@ -22,13 +23,13 @@ const Header = () => {
     if (localStorage.getItem("mood") === "dark") {
       document.querySelector("body").classList.add("dark");
       dark = true;
-  
-    }   
+    }
     if (localStorage.getItem("mood") === "light") {
-      document.querySelector("body").classList.remove('dark')
+      document.querySelector("body").classList.remove("dark");
       dark = false;
-    }}
-   
+    }
+  }
+
   const moon = () => {
     const darkBtn = document.querySelector(".darkBtn");
     if (dark === true) {
@@ -48,18 +49,17 @@ const Header = () => {
     }
   };
 
+  const [direction, setDirection] = useState(false);
+  let oldScrollY = window.scrollY;
 
-const [direction,setDirection]=useState(false)
-let oldScrollY = window.scrollY;
-
-window.onscroll =  (e) =>{
-  if (oldScrollY < window.scrollY) {
-    setDirection(false)
-  } else {
-    setDirection('sticky')
-  }
-  oldScrollY = window.scrollY;
-};
+  window.onscroll = (e) => {
+    if (oldScrollY < window.scrollY) {
+      setDirection(false);
+    } else {
+      setDirection("sticky");
+    }
+    oldScrollY = window.scrollY;
+  };
 
   const handleSignOut = (e) => {
     e.preventDefault();
@@ -70,28 +70,30 @@ window.onscroll =  (e) =>{
 
   return (
     <section
-      style={{ zIndex: "100", position: direction}}
-      className=" top-0 bg-[#bae5fd81] shadow-md py-0 lg:py-0 dark:bg-[#16213E] dark:text-zinc-100" 
-      
+      style={{ zIndex: "100", position: direction }}
+      className=" top-0  bg-[#d4eaf6] shadow-md py-0 lg:py-0 dark:bg-[#16213E] dark:text-zinc-100"
     >
-      <div
-        className=" px-4 py-0 lg:w-[1150px] m-auto  navbar hidden lg:flex"
-      
-      >
+      <div className=" px-4 py-0 lg:w-[1150px] m-auto  navbar hidden lg:flex">
         <div className=" navbar-start  w-fit">
           <NavLink className="">
-            <img src={logo} alt="" className="w-28" />
+            <img src={dark ? logoDark : logo} alt="" className="w-28" />
           </NavLink>
         </div>
         <div className="navbar-center pl-6   lg:flex hover">
           <ul className="menu menu-horizontal p-0 menu-compact ">
             <li>
-              <NavLink to={"/"} className="text-lg  font-bold">
+              <NavLink
+                to={"/"}
+                className="hover:text-[#ff03a7cb] text-lg font-bold"
+              >
                 Home
               </NavLink>
             </li>
             <li tabIndex={0}>
-              <NavLink to={"/about-us"} className="text-lg font-bold  ">
+              <NavLink
+                to={"/about-us"}
+                className="hover:text-[#ff03a7cb] text-lg font-bold  "
+              >
                 About Us
                 <svg
                   className="fill-current"
@@ -108,27 +110,36 @@ window.onscroll =  (e) =>{
                 style={{ zIndex: "100" }}
               >
                 <li className="">
-                  <NavLink to={"/our-history"} className=" text-lg font-bold ">
+                  <NavLink
+                    to={"/our-history"}
+                    className=" hover:text-[#ff03a7cb] text-lg font-bold "
+                  >
                     Our History
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
                     to={"/executive-committee"}
-                    className=" text-lg font-bold"
+                    className=" hover:text-[#ff03a7cb] text-lg font-bold"
                   >
                     Executive Committee
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/advisors"} className="text-lg font-bold ">
+                  <NavLink
+                    to={"/advisors"}
+                    className="hover:text-[#ff03a7cb] text-lg font-bold "
+                  >
                     Advisors
                   </NavLink>
                 </li>
               </ul>
             </li>
             <li tabIndex={0}>
-              <NavLink to={"/wings"} className="text-lg font-bold  ">
+              <NavLink
+                to={"/wings"}
+                className="hover:text-[#ff03a7cb] text-lg font-bold  "
+              >
                 Wings
                 <svg
                   className="fill-current"
@@ -145,14 +156,17 @@ window.onscroll =  (e) =>{
                 style={{ zIndex: "100" }}
               >
                 <li>
-                  <NavLink to={"/kin-school"} className="text-lg font-bold ">
+                  <NavLink
+                    to={"/kin-school"}
+                    className="hover:text-[#ff03a7cb] text-lg font-bold "
+                  >
                     KIN School
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
                     to={"/blood-donation"}
-                    className="text-lg font-bold "
+                    className="hover:text-[#ff03a7cb] text-lg font-bold "
                   >
                     Blood Donation
                   </NavLink>
@@ -160,20 +174,23 @@ window.onscroll =  (e) =>{
                 <li>
                   <NavLink
                     to={"/social-awarness"}
-                    className="text-lg font-bold "
+                    className="hover:text-[#ff03a7cb] text-lg font-bold "
                   >
                     Social Awarness
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/charity-aid"} className="text-lg font-bold ">
+                  <NavLink
+                    to={"/charity-aid"}
+                    className="hover:text-[#ff03a7cb] text-lg font-bold "
+                  >
                     Charity & Aid
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
                     to={"/winter-cloth-distribution"}
-                    className="text-lg font-bold "
+                    className="hover:text-[#ff03a7cb] text-lg font-bold "
                   >
                     Winter Cloth Distribution
                   </NavLink>
@@ -182,12 +199,18 @@ window.onscroll =  (e) =>{
             </li>
 
             <li>
-              <NavLink to={"/post"} className="text-lg font-bold">
+              <NavLink
+                to={"/post"}
+                className="hover:text-[#ff03a7cb] text-lg font-bold"
+              >
                 Post
               </NavLink>
             </li>
             <li tabIndex={0}>
-              <NavLink to={"/gallery"} className="text-lg font-bold  ">
+              <NavLink
+                to={"/gallery"}
+                className="hover:text-[#ff03a7cb] text-lg font-bold  "
+              >
                 Gallery
                 <svg
                   className="fill-current"
@@ -204,19 +227,28 @@ window.onscroll =  (e) =>{
                 style={{ zIndex: "100" }}
               >
                 <li className="">
-                  <NavLink to={"/photo"} className="text-lg font-bold">
+                  <NavLink
+                    to={"/photo"}
+                    className="hover:text-[#ff03a7cb] text-lg font-bold"
+                  >
                     Photo
                   </NavLink>
                 </li>
                 <li className="">
-                  <NavLink to={"/video"} className="text-lg font-bold">
+                  <NavLink
+                    to={"/video"}
+                    className="hover:text-[#ff03a7cb] text-lg font-bold"
+                  >
                     Video
                   </NavLink>
                 </li>
               </ul>
             </li>
             <li>
-              <NavLink to={"/programs"} className="text-lg font-bold">
+              <NavLink
+                to={"/programs"}
+                className="hover:text-[#ff03a7cb] text-lg font-bold"
+              >
                 Programs
               </NavLink>
             </li>
@@ -224,13 +256,16 @@ window.onscroll =  (e) =>{
               {!user?.uid ? (
                 <NavLink
                   to={"/login"}
-                  className="text-lg font-bold"
+                  className="hover:text-[#ff03a7cb] text-lg font-bold"
                   onClick={closeNav}
                 >
                   Login
                 </NavLink>
               ) : (
-                <Link className="text-lg font-bold" onClick={handleSignOut}>
+                <Link
+                  className="hover:text-[#ff03a7cb] text-lg font-bold"
+                  onClick={handleSignOut}
+                >
                   Sign Out
                 </Link>
               )}
@@ -239,7 +274,7 @@ window.onscroll =  (e) =>{
               {user?.uid && (
                 <NavLink
                   to={"/dashboard"}
-                  className="text-lg font-bold"
+                  className="hover:text-[#ff03a7cb] text-lg font-bold"
                   onClick={closeNav}
                 >
                   Dashboard
@@ -283,7 +318,7 @@ window.onscroll =  (e) =>{
             </li>
 
             {/* <li>
-              <NavLink to={"/account"} className="text-lg font-bold">
+              <NavLink to={"/account"} className="hover:text-[#ff03a7cb] text-lg font-bold">
                 Account
               </NavLink>
             </li> */}
@@ -291,7 +326,7 @@ window.onscroll =  (e) =>{
         </div>
       </div>
       <div className="flex items-center justify-evenly px-6 lg:hidden">
-        <div className="basis-1/3 justify-start flex">
+        <div className="basis-1 justify-start flex">
           {open ? (
             <></>
           ) : (
@@ -314,27 +349,12 @@ window.onscroll =  (e) =>{
             </button>
           )}
         </div>
-        <div className="grow basis-2/3">
+        <div className="grow  basis-11/12">
           <div className="px-2 mx-2 justify-between  flex items-center ">
-            <img src={logo} alt="" className="w-32 " />
+            <img src={dark ? logoDark : logo} alt="" className="w-32 " />
             <div>
               <button onClick={moon} className=" text-right darkBtn pr-5">
                 {dark === true ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-                    />
-                  </svg>
-                ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -347,6 +367,21 @@ window.onscroll =  (e) =>{
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
                     />
                   </svg>
                 )}
@@ -380,17 +415,17 @@ window.onscroll =  (e) =>{
       </div>
       <div
         id="mySidenav"
-        className="sidenav bg-[#bae5fdeb] dark:bg-slate-800 dark:text-zinc-200"
+        className="sidenav bg-[#d4eaf6f2] dark:bg-slate-800 dark:text-zinc-200"
       >
-        <li>
+        <li className="pb-3 ">
           <button className=" closebtn" onClick={closeNav}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6 block mt-3 border border-zinc-500 dark:text-white"
+              stroke="#000"
+              className="w-6 h-6 block  border border-[#ca00fc] bg-[#eaebb8] dark:text-white"
             >
               <path
                 strokeLinecap="round"
@@ -401,13 +436,20 @@ window.onscroll =  (e) =>{
           </button>
         </li>
         <li className="hover:bg-slate-400">
-          <NavLink to={"/"} className=" text-lg font-bold" onClick={closeNav}>
+          <NavLink
+            to={"/"}
+            className=" hover:text-[#ff03a7cb] text-lg font-bold"
+            onClick={closeNav}
+          >
             Home
           </NavLink>
         </li>
 
         <li className="parent-menu hover:bg-slate-400 ">
-          <NavLink to={"/about-us"} className="text-lg font-bold ">
+          <NavLink
+            to={"/about-us"}
+            className="hover:text-[#ff03a7cb] text-lg font-bold "
+          >
             <span className="pr-2">About Us</span>
             <svg
               className="fill-current inline-block"
@@ -424,7 +466,7 @@ window.onscroll =  (e) =>{
               <NavLink
                 to={"/our-history"}
                 onClick={closeNav}
-                className=" text-lg font-bold "
+                className=" hover:text-[#ff03a7cb] text-lg font-bold "
               >
                 Our History
               </NavLink>
@@ -432,7 +474,7 @@ window.onscroll =  (e) =>{
             <li>
               <NavLink
                 to={"/executive-committee"}
-                className=" text-lg font-bold"
+                className=" hover:text-[#ff03a7cb] text-lg font-bold"
                 onClick={closeNav}
               >
                 Executive Committee
@@ -441,7 +483,7 @@ window.onscroll =  (e) =>{
             <li>
               <NavLink
                 to={"/advisors"}
-                className="text-lg font-bold "
+                className="hover:text-[#ff03a7cb] text-lg font-bold "
                 onClick={closeNav}
               >
                 Advisors
@@ -450,7 +492,10 @@ window.onscroll =  (e) =>{
           </ul>
         </li>
         <li className="parent-menu">
-          <NavLink to={"/wings"} className="text-lg font-bold ">
+          <NavLink
+            to={"/wings"}
+            className="hover:text-[#ff03a7cb] text-lg font-bold "
+          >
             <span className="pr-2">Wings</span>
             <svg
               className="fill-current inline-block"
@@ -467,7 +512,7 @@ window.onscroll =  (e) =>{
               <NavLink
                 onClick={closeNav}
                 to={"/kin-school"}
-                className="text-lg font-bold "
+                className="hover:text-[#ff03a7cb] text-lg font-bold "
               >
                 KIN School
               </NavLink>
@@ -476,7 +521,7 @@ window.onscroll =  (e) =>{
               <NavLink
                 onClick={closeNav}
                 to={"/blood-donation"}
-                className="text-lg font-bold "
+                className="hover:text-[#ff03a7cb] text-lg font-bold "
               >
                 Blood Donation
               </NavLink>
@@ -485,7 +530,7 @@ window.onscroll =  (e) =>{
               <NavLink
                 onClick={closeNav}
                 to={"/social-awarness"}
-                className="text-lg font-bold "
+                className="hover:text-[#ff03a7cb] text-lg font-bold "
               >
                 Social Awarness
               </NavLink>
@@ -494,7 +539,7 @@ window.onscroll =  (e) =>{
               <NavLink
                 onClick={closeNav}
                 to={"/charity-aid"}
-                className="text-lg font-bold "
+                className="hover:text-[#ff03a7cb] text-lg font-bold "
               >
                 Charity & Aid
               </NavLink>
@@ -503,7 +548,7 @@ window.onscroll =  (e) =>{
               <NavLink
                 onClick={closeNav}
                 to={"/winter-cloth-distribution"}
-                className="text-lg font-bold "
+                className="hover:text-[#ff03a7cb] text-lg font-bold "
               >
                 Winter Cloth Distribution
               </NavLink>
@@ -514,14 +559,17 @@ window.onscroll =  (e) =>{
         <li>
           <NavLink
             to={"/post"}
-            className="text-lg font-bold"
+            className="hover:text-[#ff03a7cb] text-lg font-bold"
             onClick={closeNav}
           >
             Post
           </NavLink>
         </li>
         <li className="parent-menu">
-          <NavLink to={"/gallery"} className="text-lg font-bold ">
+          <NavLink
+            to={"/gallery"}
+            className="hover:text-[#ff03a7cb] text-lg font-bold "
+          >
             <span className="pr-2">Gallery</span>
 
             <svg
@@ -537,12 +585,18 @@ window.onscroll =  (e) =>{
 
           <ul className=" left-0 relative  bg-white dark:bg-slate-800 dark:text-zinc-200 shadow-lg down-menu">
             <li className="">
-              <Link to={"/photo"} className="text-lg font-bold justify-center">
+              <Link
+                to={"/photo"}
+                className="hover:text-[#ff03a7cb] text-lg font-bold justify-center"
+              >
                 Photo
               </Link>
             </li>
             <li className="">
-              <Link to={"/video"} className="text-lg font-bold justify-center">
+              <Link
+                to={"/video"}
+                className="hover:text-[#ff03a7cb] text-lg font-bold justify-center"
+              >
                 Video
               </Link>
             </li>
@@ -551,7 +605,7 @@ window.onscroll =  (e) =>{
         <li>
           <NavLink
             to={"/programs"}
-            className="text-lg font-bold"
+            className="hover:text-[#ff03a7cb] text-lg font-bold"
             onClick={closeNav}
           >
             Programs
@@ -561,13 +615,16 @@ window.onscroll =  (e) =>{
           {!user?.uid ? (
             <NavLink
               to={"/login"}
-              className="text-lg font-bold"
+              className="hover:text-[#ff03a7cb] text-lg font-bold"
               onClick={closeNav}
             >
               Login
             </NavLink>
           ) : (
-            <Link className="text-lg font-bold" onClick={handleSignOut}>
+            <Link
+              className="hover:text-[#ff03a7cb] text-lg font-bold"
+              onClick={handleSignOut}
+            >
               Sign Out
             </Link>
           )}
@@ -576,7 +633,7 @@ window.onscroll =  (e) =>{
           {user?.uid && (
             <NavLink
               to={"/dashboard"}
-              className="text-lg font-bold"
+              className="hover:text-[#ff03a7cb] text-lg font-bold"
               onClick={closeNav}
             >
               Dashboard

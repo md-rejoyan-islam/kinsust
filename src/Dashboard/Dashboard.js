@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 
+
 const Dashboard = () => {
   const {
     data: post = [],
@@ -27,7 +28,7 @@ const Dashboard = () => {
   });
   return (
     <section>
-        <h2 className="bg-zinc-200 text-lg py-2">Summary</h2>
+      <h2 className="bg-zinc-200 text-lg py-2">Summary</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
@@ -45,7 +46,10 @@ const Dashboard = () => {
             </tr>
             <tr>
               <th>2</th>
-              <td>Programs</td>
+              <td>
+                Programs{" "}
+               
+              </td>
               <td>{program?.length}</td>
             </tr>
             <tr>

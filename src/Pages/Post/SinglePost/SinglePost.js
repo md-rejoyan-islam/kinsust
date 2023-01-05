@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AiFillProfile } from "react-icons/ai";
 import { useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
-import skeleton from "../../../Assets/Images/skeleton/skeletok.gif";
+
 
 const SinglePost = () => {
   const {
@@ -18,7 +18,7 @@ const SinglePost = () => {
   const {
     data: posts = [],
     refetch,
-    isFetching,
+
   } = useQuery({
     queryKey: ["posts"],
     queryFn: () =>
@@ -114,11 +114,11 @@ const SinglePost = () => {
     setFull("notFull");
     setSize(2);
   };
-  console.log(post);
+  
   return (
     <section className="card   shadow-xl rounded-none  mx-auto">
-      <div className="grid lg:grid-cols-12 dark:bg-[#0f172ad9] w-full">
-        <div className="dark:bg-[#0f172a] dark:text-zinc-200 w-full  m-auto col-span-9 py-5 lg:px-16 md:px-8 px-3">
+      <div className="grid lg:grid-cols-12 divide-x dark:bg-[#0f172ad9] w-full divide-gray-400">
+        <div className="dark:bg-[#0f172a] bg-sky-100 dark:text-zinc-200 w-full  m-auto col-span-9 py-5 lg:px-16 md:px-8 px-3">
           <div>
             <h2 className="card-title font-bold justify-center text-3xl mb-5">
               {post && post?.title}
@@ -134,24 +134,25 @@ const SinglePost = () => {
           </div>
           {/* comment section */}
 
-          <div className="bg-sky-100 dark:bg-[#2934536b] py-8 rounded-md text-left ">
+          <div className="bg-sky-200 dark:bg-[#2934536b] py-8 rounded-md text-left ">
             <div className="mb-5 w-2/3 mx-auto">
-              <h2 className=" font-bold pb-3 ">
+              <h2 className=" font-bold pb-3 text-black ">
                 {post.comment.length > 0 && "Comments :"}
               </h2>
               {post?.comment &&
-                [...post.comment].reverse()
+                [...post.comment]
+                  .reverse()
                   .slice(0, size)
                   .map((com, index) => (
                     <div
                       key={index}
-                      className="mb-3 bg-[#64c8e70e] rounded-md p-2"
+                      className="mb-3 bg-sky-300 dark:bg-[#64c8e70e] rounded-md p-2"
                     >
                       <p className="">
-                        <span className="text-[#d9dcddd4] font-black">
+                        <span className=" dark:text-[#d9dcddd4] font-black">
                           {com?.name}
                         </span>{" "}
-                        <span className=" text-[#ffffff8a]">
+                        <span className=" dark:text-[#ffffff8a]">
                           {" "}
                           {`<${com?.email}>`}{" "}
                           <span className="text-[13px] px-2">
@@ -165,7 +166,7 @@ const SinglePost = () => {
                   ))}
               {full === "full" && (
                 <button
-                  className=" dark:bg-[#ffffff2b] dark:text-[#ffffff8a] py-2 px-2 rounded-md"
+                  className="bg-sky-300 dark:bg-[#ffffff2b] dark:text-[#ffffff8a] py-2 px-2 rounded-md"
                   onClick={hide}
                 >
                   Hide
@@ -173,7 +174,7 @@ const SinglePost = () => {
               )}
               {full === "notFull" && post.comment.length > 0 && (
                 <button
-                  className=" dark:bg-[#ffffff2b] dark:text-[#ffffff8a] py-2 px-2 rounded-md"
+                  className="bg-sky-300 dark:bg-[#ffffff2b] dark:text-[#ffffff8a] py-2 px-2 rounded-md"
                   onClick={showAll}
                 >
                   See More
@@ -242,7 +243,7 @@ const SinglePost = () => {
             </div>
           </div>
         </div>
-        <div className="hidden lg:block col-span-3  px-5 pt-5 dark:bg-[#0f172ad9] dark:text-zinc-200">
+        <div className="hidden lg:block col-span-3  px-5 pt-5 dark:bg-[#0f172ad9] dark:text-zinc-200 bg-blue-100">
           <h2 className=" text-center text-xl font-bold">Release Notes</h2>
           <ul>
             {posts?.result?.length > 0 &&

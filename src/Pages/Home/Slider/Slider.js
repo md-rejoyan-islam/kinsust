@@ -11,6 +11,7 @@ import "./Slider.css";
 import SwiperCore, { Autoplay } from "swiper";
 // import required modules
 import { Pagination, EffectCoverflow } from "swiper";
+import { useQuery } from "@tanstack/react-query";
 const Slider = () => {
   // const [dark, setDark] = useState(localStorage.getItem("mood"));
 
@@ -26,6 +27,18 @@ const Slider = () => {
   //   };
   // }, []);
   SwiperCore.use([Autoplay]);
+
+  const {
+    data: slider = [],
+   
+  } = useQuery({
+    queryKey: ["slider"],
+    queryFn: () =>
+      fetch(
+        `https://kin-server-side-rejoyanislam.vercel.app/api/v1/slider`
+      ).then((res) => res.json()),
+  });
+  // console.log(slider);
   return (
     <section className="">
       <div className="max-w-screen-2xl mx-auto">
@@ -67,49 +80,23 @@ const Slider = () => {
           // ]}
           // className="mySwiper"
         >
-          <SwiperSlide className="relative ">
-            <img
-              src="https://kinsust.org/wp-content/uploads/2021/05/11411996_1022380621120353_8193918635970202661_o.jpg"
-              alt=""
-              className=" to-transparent"
-            />
-            <p
-              className=" absolute left-0 lg:top-[80%] top-[70%] right-0 mx-auto "
-              style={{ opacity: "0.5" }}
-            >
-              <span className="bg-black text-white text-2xl">
-                Literacy is a bridge from misery to hope
-              </span>
-            </p>
-          </SwiperSlide>
-          <SwiperSlide className="relative">
-            <img
-              src="https://kinsust.org/wp-content/uploads/2021/05/10749969_903365219688561_6514843395615571952_o.jpg"
-              alt=""
-            />
-            <p
-              className=" absolute left-0 lg:top-[80%] top-[70%] right-0 mx-auto "
-              style={{ opacity: "0.5" }}
-            >
-              <span className="bg-black text-white text-2xl">
-                Literacy is a bridge from misery to hope
-              </span>
-            </p>
-          </SwiperSlide>
-          <SwiperSlide className="relative">
-            <img
-              src="https://kinsust.org/wp-content/uploads/2021/05/16422861_1545885018769908_8780378111676736818_o.jpg"
-              alt=""
-            />
-            <p
-              className=" absolute left-0 lg:top-[80%] top-[70%] right-0 mx-auto "
-              style={{ opacity: "0.5" }}
-            >
-              <span className="bg-black text-white text-2xl">
-                Education is the key to unlocking other human rights
-              </span>
-            </p>
-          </SwiperSlide>
+          {slider?.map((slide) => (
+            <SwiperSlide className="relative ">
+              <img
+                src={slide?.link}
+                alt=""
+                className=" to-transparent"
+              />
+              <p
+                className=" absolute left-0 lg:top-[80%] top-[70%] right-0 mx-auto "
+                style={{ opacity: "0.5" }}
+              >
+                <span className="bg-black text-white text-2xl">
+                  {slide?.title}
+                </span>
+              </p>
+            </SwiperSlide>
+          ))}
           <SwiperSlide className="relative">
             <img
               src="https://kinsust.org/wp-content/uploads/2021/05/photo6170088535432997804.jpg"

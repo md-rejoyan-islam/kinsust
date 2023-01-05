@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import useTitle from "../../Components/Title/Title";
 
 const Post = () => {
-  const [size, setSize] = useState(10);
+  const [size, setSize] = useState(9);
   const [count, setCount] = useState(1);
   const [page, setPage] = useState(0);
   useTitle("Post");
@@ -13,7 +13,6 @@ const Post = () => {
   const {
     data: post = [],
     refetch,
-    isFetching,
   } = useQuery({
     queryKey: ["post"],
     queryFn: () =>
@@ -22,12 +21,13 @@ const Post = () => {
       ).then((res) => res.json()),
   });
 
-useEffect(()=>{
-  if(post.result){
-     setCount(post.count);
-    refetch()
+useEffect(() => {
+  if(post.count){
+setCount(post.count);
   }
-},[size,page])
+  refetch();
+}, [size, refetch, page,post.count]);
+
 
 //  if (isFetching) {
 //    return (
@@ -56,7 +56,12 @@ if(post_title){
                 <h2 className="text-xl font-bold py-4 dark:text-slate-200 px-4">
                   {post?.title}
                 </h2>
-                <p className="pb-5 px-4" id="post_details">{post.details.slice(1, 100).replaceAll('<br>','').replaceAll('br>','')}</p>
+                <p className="pb-5 px-4" id="post_details">
+                  {post.details
+                    .slice(1, 100)
+                    .replaceAll("<br>", "")
+                    .replaceAll("br>", "")}
+                </p>
                 <figure>
                   <img
                     src={post?.photo}
@@ -117,29 +122,26 @@ if(post_title){
               </div>
             ))}
         </div> */}
-        <div>
-          <p>
-            Current page {page} , size {size}
-          </p>
+        <div className="pt-4">
           {[...Array(Math.ceil(count / size)).keys()].map((index, key) => (
             <button
               key={key}
               className="btn mx-2"
               onClick={() => setPage(index)}
             >
-              {index}
+              {index+1}
             </button>
           ))}
           <select
             onClick={(event) => setSize(event.target.value)}
-            className="border border-zinc-300 p-2"
+            className="border  input border-zinc-300 bg-slate-400 p-2"
             name="select"
           >
             <option value={"2"}>2</option>
             <option value={"3"}>3</option>
-            <option value={"5"}>5</option>
-            <option defaultValue={"10"} selected>
-              10
+            <option value={"6"}>6</option>
+            <option defaultValue={"9"} selected>
+              9
             </option>
             <option value={"15"}>15</option>
             <option value={"20"}>20</option>

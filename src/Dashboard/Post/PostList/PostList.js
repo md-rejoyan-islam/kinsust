@@ -3,6 +3,7 @@ import axios from 'axios';
 import React from 'react';
 import toast from 'react-hot-toast';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import CustomAlert from '../../../Components/CustomAlert/CustomAlert';
 
 const PostList = () => {
     const { data: posts = [], refetch } = useQuery({
@@ -19,9 +20,12 @@ const PostList = () => {
           `https://kin-server-side-rejoyanislam.vercel.app/api/v1/post/${id}`
         )
         .then((res) => {
-          if (res.statusText === "OK") {
+          if (res.status === 200) {
             refetch();
-            toast.success('Successfully Deleted')
+            toast.custom(<CustomAlert>Successfully Deleted</CustomAlert>, {
+              duration: 1000,
+            });
+           
             console.log(res);
           }
         })

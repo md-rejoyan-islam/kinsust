@@ -3,6 +3,7 @@ import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import CustomAlert from "../../Components/CustomAlert/CustomAlert";
 
 const NewsTicker = () => {
  
@@ -28,8 +29,11 @@ const NewsTicker = () => {
          )
          .then((res) => {
            console.log(res);
-           if (res.statusText === "OK") {
-             toast.success("Successfully Added");
+           if (res.status === 200) {
+            toast.custom(<CustomAlert>Successfully Added</CustomAlert>, {
+              duration: 1000,
+            });
+             
              refetch();
              e.target.reset();
            }
@@ -42,8 +46,11 @@ const NewsTicker = () => {
         `https://kin-server-side-rejoyanislam.vercel.app/api/v1/news-ticker/${id}`
       )
       .then((res) => {
-        if (res.statusText === "OK") {
-          toast.success("successfully deleted");
+        if (res.status === 200) {
+          toast.custom(<CustomAlert>Successfully Deleted</CustomAlert>, {
+            duration: 1000,
+          });
+          
           refetch();
         }
       })

@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import CustomAlert from "../../../Components/CustomAlert/CustomAlert";
 
 const AddSlider = () => {
   const {
@@ -20,8 +21,11 @@ const AddSlider = () => {
       )
       .then((res) => {
         console.log(res);
-        if (res.statusText === "OK") {
-          toast.success("Successfully Added");
+        if (res.status === 200) {
+          toast.custom(<CustomAlert>successfully Added</CustomAlert>, {
+            duration: 1000,
+          });
+          
           e.target.reset();
         }
       })

@@ -4,6 +4,7 @@ import React from 'react';
 import toast from 'react-hot-toast';
 
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import CustomAlert from '../../../Components/CustomAlert/CustomAlert';
 
 const AllProgram = () => {
 
@@ -21,8 +22,11 @@ const AllProgram = () => {
         `https://kin-server-side-rejoyanislam.vercel.app/api/v1/program/${id}`
       )
       .then((res) => {
-        if (res.statusText === "OK") {
-          toast.success("successfully deleted");
+        if (res.status === 200) {
+          toast.custom(<CustomAlert>successfully deleted</CustomAlert>, {
+            duration: 1000,
+          });
+          
           refetch();
           console.log(res);
         }
