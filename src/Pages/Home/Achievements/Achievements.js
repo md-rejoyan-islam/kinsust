@@ -7,7 +7,7 @@ const Achievements = () => {
   return (
     <section className="dark:text-slate-200 dark:bg-[#293453f3]   bg-[#cdecfe] ">
       <div className=" lg:px-7 md:px-24 px-4  py-10 xl:w-[1250px]  mx-auto ">
-        <div className=" m-auto px-7">
+        <div className=" m-auto px-4">
           <h1 className="lg:text-6xl text-4xl md:text-5xl font-bold text-center pt-2 lg:pt-0 pb-4 lg:pb-0">
             Our Achievements
           </h1>

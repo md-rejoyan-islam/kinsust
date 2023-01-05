@@ -7,14 +7,14 @@ const AboutUs = () => {
     <section className="bg-sky-100   dark:bg-[rgb(32,44,76)]  dark:text-slate-200">
       <div className="lg:py-16 py-8 md:py-12 mx-auto hero  xl:w-[1250px] text-justify">
         <div className="hero-content flex-col-reverse lg:flex-row-reverse ">
-          <div className="lg:px-3 md:px-16 basis-5/12  px-7">
+          <div className="lg:px-3 md:px-16 basis-5/12 ">
             <PhotoProvider>
               <PhotoView src={photo}>
                 <img src={photo} className="rounded-lg shadow-2xl " alt="" />
               </PhotoView>
             </PhotoProvider>
           </div>
-          <div className=" px-7 basis-7/12">
+          <div className=" md:px-7  basis-7/12">
             <h1 className="lg:text-6xl text-4xl md:text-5xl font-bold text-center pt-2 lg:pt-0 pb-4 lg:pb-0">
               About us
             </h1>

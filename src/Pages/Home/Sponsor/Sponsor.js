@@ -7,7 +7,7 @@ const Sponsor = () => {
     <section className="  dark:text-slate-200 py-5 bg-[#bae5fdb8] dark:bg-[rgba(32,44,76,0.96)] ">
       <div className="mx-auto hero pb-12 pt-5 xl:w-[1250px]">
         <div className="hero-content flex-col-reverse lg:flex-row-reverse">
-          <div className="lg:px-3 md:px-16 basis-5/12  px-3">
+          <div className="lg:px-3 md:px-16 basis-5/12 ">
             <PhotoProvider>
               <PhotoView src={photo}>
                 <img
@@ -19,7 +19,7 @@ const Sponsor = () => {
               </PhotoView>
             </PhotoProvider>
           </div>
-          <div className="px-7 basis-7/12">
+          <div className="md:px-7 basis-7/12">
             <h1 className="lg:text-6xl text-4xl md:text-5xl font-bold text-center pt-2 lg:pt-0 pb-4 lg:pb-0">
               Sponsor a Child
             </h1>

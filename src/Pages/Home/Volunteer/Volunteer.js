@@ -3,7 +3,7 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const Volunteer = () => {
   return (
-    <section className=" dark:text-slate-200  py-10 md:px-7 px-3 bg-[#d8f0fed1] dark:bg-[#202c4c] ">
+    <section className=" dark:text-slate-200  py-10 md:px-7  bg-[#d8f0fed1] dark:bg-[#202c4c] ">
       <div className="xl:w-[1150px] m-auto grid lg:grid-cols-2 lg:px-7 md:px-24 px-4 gap-10 ">
         <div>
           <h1 className="lg:text-6xl text-4xl md:text-5xl font-bold text-center pt-2 lg:pt-0 pb-4 lg:pb-0">
