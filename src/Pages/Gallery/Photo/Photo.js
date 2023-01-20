@@ -5,7 +5,7 @@ const Photo = () => {
     useTitle("Photo")
     return (
       <section className="py-5 dark:bg-[#202c4c]  text-black dark:text-white bg-[#c8eafd] h-full">
-        <div className="md:py-5  grid lg:grid-cols-3 sm:grid-cols-2 gap-5 mx-auto xl:w-[1150px] lg:px-12 md:px-28 px-4">
+        <div className="py-5  grid lg:grid-cols-3 sm:grid-cols-2 gap-5 mx-auto xl:w-[1150px] lg:px-12 md:px-28 px-4">
           <div>
             <img
               src="https://drive.google.com/uc?id=1rV5Tl8IYCj8B8hGJ9o1-oDg54UwuBHt2"
