@@ -48,7 +48,7 @@ if(post_title){
       <main className="xl:w-[1280px] py-10 px-5 lg:m-auto">
         <div className="grid xl:grid-cols-3 gap-8 md:grid-cols-2 justify-center">
           {post?.result &&
-            [...post.result].reverse().map((post, index) => (
+            [...post.result].map((post, index) => (
               <div
                 key={index}
                 className=" card  shadow-xl dark:bg-[#293548] dark:text-[#bfc9d7] bg-[#ffffffa2]"

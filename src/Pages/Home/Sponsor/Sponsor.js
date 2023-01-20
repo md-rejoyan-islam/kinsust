@@ -25,14 +25,9 @@ const Sponsor = () => {
             </h1>
             <p className="lg:px-7 md:px-24 px-4 md:py-6 py-4  lg:text-xl text-lg md:text-lg font-medium text-justify">
               You can now sponsor a student of{" "}
-              <span
-                className="text-red-600"
-                style={{ fontFamily: "Arial black, Helvetica, sans-serif" }}
-              >
-                KIN
-              </span>{" "}
-              <span className='text-red-600'style={{fontFamily: 'Arial black, Helvetica, sans-serif'}}>KIN</span>
-              School through carrying their educational costs, providing them
+              
+              <span className='text-red-600'style={{fontFamily: 'Arial black, Helvetica, sans-serif'}}>KIN </span>
+               School through carrying their educational costs, providing them
               clothes & other financial needs.
             </p>
           </div>
