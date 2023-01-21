@@ -10,7 +10,7 @@ import mazharPhoto from "../../../Assets/Images/advisors/mazhar.jpg";
 const Advisors = () => {
   useTitle("Advisors");
   return (
-    <section className="py-5 dark:bg-[#202c4c]  text-black dark:text-white bg-[#c8eafd] h-full px-4">
+    <section className="py-5 bg-[#e6f0f6] dark:bg-[#202c4c]  text-black dark:text-white  h-full px-4">
       <div className="py-5  rounded-md mx-auto border-black xl:w-[1150px] lg:px-12 md:px-28 px-4">
         <h1 className="xl:text-4xl md:text-2xl text-2xl font-bold py-2">
           Our Honourable Advisors{" "}
@@ -21,7 +21,7 @@ const Advisors = () => {
         </p>
       </div>
       <div className="my-5 rounded-md py-5  mx-auto border-black xl:w-[1150px] lg:px-12 md:px-28 px-4 grid lg:grid-cols-3 gap-5 sm:grid-cols-2">
-        <div className="border rounded-md px-2 py-5 hover:bg-[#bae5fdfb] hover:scale-105  dark:hover:bg-[#11224c88]  border-black ">
+        <div className="border rounded-md px-2 py-5 hover:bg-[#bae5fdfb] hover:scale-105  dark:hover:bg-[#11224c88]  border-black bg-[#c8eafd] ">
           <img
             src={sharminPhoto}
             className="rounded-full py-2 mx-auto w-[200px] h-[200px]"
@@ -74,7 +74,7 @@ const Advisors = () => {
             </div>
           </div>
         </div>
-        <div className=" hover:scale-105  border rounded-md px-2 py-5 hover:bg-[#bae5fdfb] dark:hover:bg-[#11224c88]  border-black ">
+        <div className=" hover:scale-105  border rounded-md px-2 py-5 hover:bg-[#bae5fdfb] dark:hover:bg-[#11224c88]  border-black bg-[#c8eafd]">
           <img
             src={amenaPhoto}
             className="rounded-full py-2 mx-auto w-[200px] h-[200px]"
@@ -127,7 +127,7 @@ const Advisors = () => {
             </div>
           </div>
         </div>
-        <div className="hover:scale-105  border rounded-md px-2 py-5 hover:bg-[#bae5fdfb] dark:hover:bg-[#11224c88]  border-black ">
+        <div className="hover:scale-105  border rounded-md px-2 py-5 hover:bg-[#bae5fdfb] dark:hover:bg-[#11224c88]  border-black bg-[#c8eafd]">
           <img
             src={mohsinPhoto}
             className="rounded-full py-2 mx-auto w-[200px] h-[200px]"
@@ -181,7 +181,7 @@ const Advisors = () => {
             </div>
           </div>
         </div>
-        <div className=" hover:scale-105  border rounded-md px-2 py-5 hover:bg-[#bae5fdfb] dark:hover:bg-[#11224c88]  border-black ">
+        <div className=" hover:scale-105  border rounded-md px-2 py-5 hover:bg-[#bae5fdfb] dark:hover:bg-[#11224c88]  border-black bg-[#c8eafd] ">
           <img
             src={mazharPhoto}
             className="rounded-full py-2 mx-auto w-[200px] h-[200px]"
@@ -235,7 +235,7 @@ const Advisors = () => {
             </div>
           </div>
         </div>
-        <div className="hover:scale-105 border rounded-md px-2 py-5 hover:bg-[#bae5fdfb] dark:hover:bg-[#11224c88]  border-black ">
+        <div className="hover:scale-105 border rounded-md px-2 py-5 hover:bg-[#bae5fdfb] dark:hover:bg-[#11224c88]  border-black bg-[#c8eafd]">
           <img
             src={soyebPhoto}
             className="rounded-full py-2 mx-auto w-[200px] h-[200px]"
