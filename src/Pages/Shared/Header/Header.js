@@ -438,7 +438,7 @@ const Header = () => {
         <li className="hover:bg-slate-400">
           <NavLink
             to={"/"}
-            className=" hover:text-[#ff03a7cb] text-lg font-bold"
+            className=" hover:text-[#38bdeb] text-lg font-bold"
             onClick={closeNav}
           >
             Home
@@ -448,7 +448,7 @@ const Header = () => {
         <li className="parent-menu hover:bg-slate-400 ">
           <NavLink
             to={"/about-us"}
-            className="hover:text-[#ff03a7cb] text-lg font-bold "
+            className="hover:text-[#38bdeb] text-lg font-bold "
           >
             <span className="pr-2">About Us</span>
             <svg

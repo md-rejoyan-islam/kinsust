@@ -15,3 +15,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@layer components{
+   .cardDesign{
+  @apply   rounded-md px-2 py-5 hover:bg-[#95efcafb]   bg-[#dee0f3]  h-full
+  }
+  .cardWrapper{
+   @apply  relative  dark:text-[#8998ad]
+  }
+  .innerCard-1{
+    @apply w-full absolute top-0  rotate-[3deg] hover:rotate-[-4deg] left-0  dark:bg-[#172b62] bg-[#deaef0] z-10   h-full rounded-md
+  }
+  .innerCard-2{
+    @apply w-full absolute  rotate-[6deg] top-0 left-0   dark:bg-[#293f74] bg-[#aeccf0]  h-full rounded-md
+  }
+}
+
+
+
+/* shadow-[12px_12px_0px_#16213e] */

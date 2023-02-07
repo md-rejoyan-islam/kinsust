@@ -17,10 +17,14 @@ const Footer = () => {
         </div>
         <div className="text-white place-items-center">
           <span className="text-yellow-200  font-bold">EXPLORE</span>
-          <Link className="link link-hover">Our History</Link>
+          <Link className="link link-hover" to={"/our-history"}>
+            Our History
+          </Link>
           <Link className="link link-hover">Campaigns</Link>
           <Link className="link link-hover">Media</Link>
-          <Link className="link link-hover">Executive Committee</Link>
+          <Link className="link link-hover" to={"/executive-committee"}>
+            Executive Committee
+          </Link>
           <Link to={"/faq"} className="link link-hover">
             FAQ
           </Link>
