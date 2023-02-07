@@ -14,7 +14,7 @@ const ExecutiveCommittee = () => {
               17th Executive Committee of KIN
             </h1>
           </div>
-          <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 my-5 sm:grid-cols-2 px-5 gap-7">
+          <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 my-5 sm:grid-cols-2 px-5 gap-10">
             <SingleEC
               photo={rahim}
               name="ইফরাতুল হাসান রাহিম"
